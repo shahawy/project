@@ -1,0 +1,34 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX uri: <http://www.semanticweb.org/pc/ontologies/2022/4/untitled-ontology-2#>
+SELECT ?doctorname 
+	WHERE { ?doctor a uri:doctor.
+	?doctor uri:name ?doctorname.}
+
+
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX uri: <http://www.semanticweb.org/pc/ontologies/2022/4/untitled-ontology-2#>
+SELECT ?doctorname ?doctorsalary
+	WHERE { ?doctor a uri:doctor.
+	?doctor uri:name ?doctorname.
+	?doctor uri:salary ?doctorsalary.
+	FILTER(?doctorsalary>16000).}
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX uri: <http://www.semanticweb.org/pc/ontologies/2022/4/untitled-ontology-2#>
+SELECT ?patientname ?roomnumber
+	WHERE { ?patient a uri:patient.
+	?patient uri:name ?patientname.
+	?patient uri:sitting_in ?roomnumber.
+	?roomnumber uri:roomnumber ?roomnubmer.}
